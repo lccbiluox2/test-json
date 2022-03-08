@@ -1,0 +1,10 @@
+[
+    for(.content)
+    let IoC = .data
+    [
+            for(.now)
+            {
+                "Iox":$IoC
+            }
+    ]
+]
