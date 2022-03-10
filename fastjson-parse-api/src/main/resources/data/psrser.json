@@ -137,9 +137,9 @@
           "severity": "critical",
           "virus_family"：""
           "tags_classes": {
-//            "virus_family": [
-//              "DsBoot"
-//            ],
+            //            "virus_family": [
+            //              "DsBoot"
+            //            ],
             "security_event": [
               "DsBoot_attack"
             ],

@@ -25,6 +25,7 @@ import java.util.Set;
 public class ParserJSON {
 
     ObjectMapper mapper = new ObjectMapper();
+    private GetDataFactory getDataFactory = new GetDataFactory();
     FormatDataFactory formatData = new FormatDataFactory();
 
     public String parse(String json, ParserConfig parserConfig, List<ParserRule> rule) throws JsonProcessingException {
@@ -44,7 +45,7 @@ public class ParserJSON {
     private void parseByStepCode(JSONObject data, ParserConfig parserConfig, List<ParserRule> rule) throws JsonProcessingException {
         ParserContext parserContext = new ParserContext();
         parserContext.setObject(data);
-        parserContext.setType(false);
+        parserContext.setTypeArray(false);
         for (ParserRule parserRule : rule) {
             int step = parserRule.getStep();
             String name = parserRule.getName();
@@ -52,7 +53,7 @@ public class ParserJSON {
                 processCheckDataRule(data, parserRule);
             }
             if (name.equals("getData")) {
-                processGetDataRule(data, parserRule,parserContext);
+                getDataFactory.processGetDataRule(parserRule,parserContext);
             }
 
             if (name.equals("keyObjectSinkToArray")) {
@@ -70,7 +71,7 @@ public class ParserJSON {
 
 
     private void processKeyObjectSinkToArray(ParserRule parserRule, ParserContext parserContext) throws JsonProcessingException {
-        boolean array = parserContext.isType();
+        boolean array = parserContext.isTypeArray();
         JSONObject object = parserContext.getObject();
         Set<String> strings = object.keySet();
         JSONArray arrayResult = new JSONArray();
@@ -79,13 +80,13 @@ public class ParserJSON {
             item1.put("_id",item);
             arrayResult.add(item1);
         }
-        parserContext.setType(true);
+        parserContext.setTypeArray(true);
         parserContext.setArray(arrayResult);
         printDetail(parserContext);
     }
 
     private void printDetail(ParserContext parserContext) throws JsonProcessingException {
-        if(parserContext.isType()){
+        if(parserContext.isTypeArray()){
             //格式化/美化/优雅的输出
             System.out.println(mapper.writerWithDefaultPrettyPrinter()
                     .writeValueAsString(parserContext.getArray()));
@@ -97,11 +98,7 @@ public class ParserJSON {
 
     }
 
-    private void processGetDataRule(JSONObject data, ParserRule parserRule,ParserContext parserContext) {
-        JSONObject data1 = data.getJSONObject("data");
-        parserContext.setType(false);
-        parserContext.setObject(data1);
-    }
+
 
     private void processCheckDataRule(JSONObject data, ParserRule parserRule) {
         String ruleDetail = parserRule.getRule();

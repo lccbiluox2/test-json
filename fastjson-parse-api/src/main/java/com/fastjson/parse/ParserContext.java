@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class ParserContext {
     // 是否是JSONArray
-    private boolean type;
+    private boolean typeArray;
     private JSONObject object;
     private JSONArray array;
 }

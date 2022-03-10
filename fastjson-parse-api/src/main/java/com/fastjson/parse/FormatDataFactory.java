@@ -31,7 +31,7 @@ public class FormatDataFactory {
      * @throws JsonProcessingException
      */
     public void processFormattingDataByType(ParserRule parserRule, ParserContext parserContext) throws JsonProcessingException {
-        boolean type = parserContext.isType();
+        boolean type = parserContext.isTypeArray();
         String rule = parserRule.getRule();
         FormatDataRule format = JSONObject.parseObject(rule, FormatDataRule.class);
         List<DataFormatField> fields = format.getFields();
@@ -53,7 +53,7 @@ public class FormatDataFactory {
         } else {
             JSONObject object = parserContext.getObject();
             JSONObject result = formatOneJSONObject(object, format);
-            parserContext.setType(false);
+            parserContext.setTypeArray(false);
             parserContext.setObject(result);
         }
     }
