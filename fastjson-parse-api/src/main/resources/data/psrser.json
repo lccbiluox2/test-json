@@ -1,0 +1,313 @@
+{
+  "cost": 69,
+  "code": 1,
+  "message": "获取到2条结果",
+  "data": {
+    "ipxxxxxx": {
+      "malicious": true,
+      "threat_type": "C2",
+      "threat_subtype": "Trojan",
+      "confidence_level": 3,
+      "confidence_score": 8,
+      "risk_level": 5,
+      "tags": ["apt", "c2", "apt_NOBELIUM", "钓鱼网站"],
+      "is_apt": true,
+      "warn_name": "普通远控木马活动事件",
+      "source_name": "xxxx",
+      "create_time": 1629110670936,
+      "update_time": 1629110679304
+    },
+    "192.99.221.77": {
+      "malicious": true,
+      "threat_type": "C2",
+      "threat_subtype": "Trojan",
+      "confidence_level": 3,
+      "confidence_score": 8,
+      "risk_level": 5,
+      "tags": ["apt", "c2", "apt_NOBELIUM", "钓鱼网站"],
+      "is_apt": true,
+      "warn_name": "普通远控木马活动事件",
+      "source_name": "安恒情报源",
+      "create_time": 1629110670936,
+      "update_time": 1629110679304
+    }
+  }
+}
+
+
+
+{
+  "cost": 69,
+  "code": 1,
+  "message": "获取到2条结果",
+  "data": {
+    "ipxxxxxx": {
+      "malicious": true,
+      "threat_type": "C2",
+      "threat_subtype": "Trojan",
+      "confidence_level": 3,
+      "confidence_score": 8,
+      "risk_level": 5,
+      "tags": ["apt", "c2", "apt_NOBELIUM", "钓鱼网站"],
+      "is_apt": true,
+      "warn_name": "普通远控木马活动事件",
+      "source_name": "xxxx",
+      "create_time": 1629110670936,
+      "update_time": 1629110679304
+    },
+    "192.99.221.77": {
+      "malicious": true,
+      "threat_type": "C2",
+      "threat_subtype": "Trojan",
+      "confidence_level": 3,
+      "confidence_score": 8,
+      "risk_level": 5,
+      "tags": ["apt", "c2", "apt_NOBELIUM", "钓鱼网站"],
+      "is_apt": true,
+      "warn_name": "普通远控木马活动事件",
+      "source_name": "安恒情报源",
+      "create_time": 1629110670936,
+      "update_time": 1629110679304
+    }
+  }
+}
+
+
+
+
+{
+  "data": [
+    {
+      "yzsrdfp.f3322.net": [
+        {
+          "_id""yzsrdfp.f3322.net"
+          "alert_name": "DSL4 Botnet C&C 活动事件",
+          "campaign": "",
+          "confidence": "high",
+          .....
+          "targeted": false
+        }]
+    },
+    {
+      "github.com": []
+    },
+    {
+      "47.100.10.70": [
+        {
+          "alert_name": "Gh0st RAT 远控木马活动事件",
+          "campaign": "",
+          .....
+          "targeted": false
+        },
+        {
+          "alert_name": "xxxxxx",
+          "campaign": "",
+          "confidence": "high",
+          .....
+          "targeted": false
+        }]
+    }
+  ],
+  "from": "奇安信",
+  "msg": "执行成功!",
+  "status": 2000,
+  "user_defined": []
+}
+
+
+
+
+{
+  "data": [
+    {
+      "ioc": "maimai666.com",
+      "intelligence": [
+        {
+          "ioc_type": "domain",
+          "confidence_level": "high",
+          "main_tag": "暗云木马攻击",
+          "basic_tag": "Trojan",
+          "is_malicious": true,
+          "judgments": [
+            "C2"
+          ],
+          "platform": [
+            "all"
+          ],
+          "severity": "critical",
+          "virus_family"：""
+          "tags_classes": {
+//            "virus_family": [
+//              "DsBoot"
+//            ],
+            "security_event": [
+              "DsBoot_attack"
+            ],
+            "industry": [
+              "Gaming_companies"
+            ]
+          },
+          "tlp": 0,
+          "update_time": 1593815567,
+          "cas": [
+            {
+              "begin": "2016-08-14 21:10:33",
+              "end": "2018-08-14 21:10:33",
+              "fingerprint": "E5:BD:D4:AF:59:EE:7D:CA:37:BA:2B:D3:35:24:85:F7:30:04:55:8B",
+              "issuer": "orend-2011SERVER-CA",
+              "purpose": "SSL server|Netscape SSL server|Any Purpose|Any Purpose CA|OCSP helper",
+              "revoked": false,
+              "revoked_time": "",
+              "serial_number": "61DEF5B800000000000D",
+              "status": "1",
+              "status_desc": "Expired",
+              "subject": "guerzenich.ddns.net",
+              "verify": "SHA1"
+            }
+          ],
+          "ports": [],
+          "cur_ips": [],
+          "cur_whois": [],
+          "samples": [
+            {
+              "malware_family": "TrojanDownloader",
+              "malware_type": "TrojanDownloader",
+              "ratio": "",
+              "scan_time": "",
+              "sha256": "2d973b79db31108d882b1050fb9f424ffab3f4d16d9ae8e58c2c0d64a0ed841e"
+            },
+            {
+              "malware_family": "Backdoor",
+              "malware_type": "Backdoor",
+              "ratio": "",
+              "scan_time": "",
+              "sha256": "375772c51124d7be412772f27206e45b695f4fa3ddaeb4a9563c0727e27b992a"
+            }
+          ],
+          "source_name": "微步-失陷指标"
+        },
+        {
+          "ioc_type": "domain",
+          "confidence_level": "high",
+          "main_tag": "海莲花团伙",
+          "basic_tag": "APT",
+          "is_malicious": true,
+          "judgments": [],
+          "platform": [
+            "windows"
+          ],
+          "severity": "3",
+          "tags_classes": {
+            "virus_family": [
+              "njRAT"
+            ]
+          },
+          "tlp": 0,
+          "update_at": 1593815567,
+          "asn": {
+            "info": "BERTOLDI & VENANCIO INTERNET VIA RADIO ME, BR",
+            "number": 266280,
+            "rank": 4
+          },
+          "cas": [
+            {
+              "begin": "2016-08-14 21:10:33",
+              "end": "2018-08-14 21:10:33",
+              "fingerprint": "E5:BD:D4:AF:59:EE:7D:CA:37:BA:2B:D3:35:24:85:F7:30:04:55:8B",
+              "issuer": "orend-2011SERVER-CA",
+              "purpose": "SSL server|Netscape SSL server|Any Purpose|Any Purpose CA|OCSP helper",
+              "revoked": false,
+              "revoked_time": "",
+              "serial_number": "61DEF5B800000000000D",
+              "status": "1",
+              "status_desc": "Expired",
+              "subject": "guerzenich.ddns.net",
+              "verify": "SHA1"
+            }
+          ],
+          "ports": [],
+          "cur_ips": [],
+          "cur_whois": [],
+          "samples": [
+            {
+              "malware_family": "TrojanDownloader",
+              "malware_type": "TrojanDownloader",
+              "ratio": "",
+              "scan_time": "",
+              "sha256": "2d973b79db31108d882b1050fb9f424ffab3f4d16d9ae8e58c2c0d64a0ed841e"
+            },
+            {
+              "malware_family": "Backdoor",
+              "malware_type": "Backdoor",
+              "ratio": "",
+              "scan_time": "",
+              "sha256": "375772c51124d7be412772f27206e45b695f4fa3ddaeb4a9563c0727e27b992a"
+            }
+          ],
+          "source_name": "开源-失陷指标"
+        }
+      ]
+    },
+    {
+      "ioc": "170.78.228.248",
+      "intelligence": [
+        {
+          "ioc_type": "ipv4",
+          "confidence_level": "high",
+          "main_tag": "海莲花团伙",
+          "basic_tag": "APT",
+          "is_malicious": true,
+          "judgments": [],
+          "platform": [
+            "windows"
+          ],
+          "severity": "3",
+          "tags_classes": {
+            "virus_family": [
+              "njRAT"
+            ]
+          },
+          "tlp": 0,
+          "update_at": 1593815567,
+          "asn": {
+            "info": "BERTOLDI & VENANCIO INTERNET VIA RADIO ME, BR",
+            "number": 266280,
+            "rank": 4
+          },
+          "cas": [
+            {
+              "protocol": "",
+              "port": "",
+              "period": "",
+              "digital": ""
+            }
+          ],
+          "ports": [
+            12097
+          ],
+          "cur_ips": [],
+          "cur_whois": [],
+          "samples": [
+            {
+              "malware_family": "TrojanDownloader",
+              "malware_type": "TrojanDownloader",
+              "ratio": "",
+              "scan_time": "",
+              "sha256": "2d973b79db31108d882b1050fb9f424ffab3f4d16d9ae8e58c2c0d64a0ed841e"
+            },
+            {
+              "malware_family": "Backdoor",
+              "malware_type": "Backdoor",
+              "ratio": "",
+              "scan_time": "",
+              "sha256": "375772c51124d7be412772f27206e45b695f4fa3ddaeb4a9563c0727e27b992a"
+            }
+          ],
+          "source_name": "微步-失陷指标"
+        }
+      ],
+      "response_code": 0,
+      "verbose_msg": "OK"
+    }
+  ]
+}
