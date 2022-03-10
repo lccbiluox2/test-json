@@ -6,12 +6,16 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fastjson.conversion.factory.FormatDataFactory;
 import com.fastjson.conversion.factory.GetDataFactory;
+import com.fastjson.conversion.factory.MappingDataFactory;
 import com.fastjson.conversion.factory.ParserContext;
 import com.fastjson.conversion.factory.RemoveFieldFactory;
+import com.fastjson.conversion.factory.RenameFieldsFactory;
 import com.fastjson.conversion.factory.SinkDataFactory;
 import com.fastjson.conversion.rule.DataField;
 import com.fastjson.conversion.rule.ParserRule;
 import com.fastjson.conversion.rule.check.CheckDataRule;
+import com.fastjson.conversion.rule.mapping.MappingDataRule;
+import com.fastjson.conversion.rule.rename.RenameFieldRule;
 import com.fastjson.conversion.strategy.ParserConfig;
 import com.googlecode.aviator.AviatorEvaluator;
 
@@ -36,6 +40,8 @@ public class TransformJSON {
     FormatDataFactory formatData = new FormatDataFactory();
     RemoveFieldFactory removeFieldFactory = new RemoveFieldFactory();
     private SinkDataFactory sinkDataFactory = new SinkDataFactory();
+    private MappingDataFactory mappingDataFactory = new MappingDataFactory();
+    private RenameFieldsFactory renameFieldsFactory = new RenameFieldsFactory();
 
     public String parse(String json, ParserConfig parserConfig, List<ParserRule> rule) throws JsonProcessingException {
         if (rule == null || rule.isEmpty()) {
@@ -94,6 +100,24 @@ public class TransformJSON {
                 sinkDataFactory.processObjectKeySinkToArrayObject(parserRule,parserContext);
                 printDetail(parserContext);
             }
+
+            if (name.equals("MappingDataRule")) {
+                mappingDataFactory.processMappingDataRule(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
+
+            if (name.equals("MappingRangeRule")) {
+                mappingDataFactory.processMappingRangeRule(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
+
+            if (name.equals("RenameFieldRule")) {
+                renameFieldsFactory.processRenameFieldRule(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
 
 
 

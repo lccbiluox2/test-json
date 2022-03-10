@@ -2,6 +2,7 @@ package com.fastjson.conversion;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fastjson.conversion.rule.ParserRule;
+import com.fastjson.conversion.rule.mapping.MappingDataRule;
 import com.fastjson.conversion.strategy.ParserConfig;
 import org.junit.Test;
 
@@ -229,9 +230,21 @@ public class ParserJSONTest {
         // JsonObject数据下沉到JSONArray 下面的 Object
         ParserRule objectSinkToArrayObject = new ParserRule(3,"ObjectSinkToArrayObject","{\"level\":1,\"fields\":[{\"field\":\"data\",\"type\":\"String\"},{\"field\":\"dataType\",\"type\":\"String\"},{\"field\":\"machinename\",\"type\":\"String\"},{\"field\":\"id\",\"type\":\"String\"}],\"targetArray\":\"now\",\"isThrowEx\":false,\"exMessage\":\"xxx\"}");
 
+        //  mapping解析
+        ParserRule mappingRule = new ParserRule(3,"MappingDataRule","{\"fields\":[{\"field\":\"type\",\"type\":\"String\",\"mapping_use\":\"mclass_mappings\",\"targetField\":\"mclass\"},{\"field\":\"type\",\"type\":\"String\",\"mapping_use\":\"sclass_mappings\",\"targetField\":\"sclass\"},{\"field\":\"type\",\"type\":\"String\",\"mapping_use\":\"sclass_mappings\",\"targetField\":\"tags\"}],\"mappings\":{\"mclass_mappings\":\"Spam->a1\",\"sclass_mappings\":\"Spam->a2\",\"tags_mappings\":\"Spam->a3\"},\"isThrowEx\":false,\"exMessage\":\"xxx\"}");
+
+        //  mapping解析
+        ParserRule mappingRangeRule = new ParserRule(3,"MappingRangeRule","{\"fields\":[{\"field\":\"confidence\",\"type\":\"int\",\"mapping_use\":\"confidence_mappings\",\"targetField\":\"confidence\"}],\"mappings\":{\"confidence_mappings\":{\"Hight\":\"(80,100]\",\"Medium\":\"(60,80]\",\"Low\":\"(0,60]\"}},\"isThrowEx\":false,\"exMessage\":\"xxx\"}");
+
+        ParserRule RenameFieldRule = new ParserRule(3,"RenameFieldRule","{\"fields\":[{\"field\":\"dataType\",\"type\":\"String\",\"targetField\":\"IoCType\"}],\"isThrowEx\":false,\"exMessage\":\"xxx\"}");
+
+
         rule.add(getDataByField);
         rule.add(removeField);
         rule.add(objectSinkToArrayObject);
+        rule.add(mappingRule);
+        rule.add(mappingRangeRule);
+        rule.add(RenameFieldRule);
 
         parserJSON.parse(data,parserConfig,rule);
     }
