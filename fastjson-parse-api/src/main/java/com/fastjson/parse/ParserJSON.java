@@ -53,8 +53,15 @@ public class ParserJSON {
                 processCheckDataRule(data, parserRule);
             }
             if (name.equals("getData")) {
-                getDataFactory.processGetDataRule(parserRule,parserContext);
+                getDataFactory.processGetDataRuleAiAnxin(parserRule,parserContext);
+                printDetail(parserContext);
             }
+
+            if (name.equals("getDataByField")) {
+                getDataFactory.processGetDataByFieldRule(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
 
             if (name.equals("keyObjectSinkToArray")) {
                 processKeyObjectSinkToArray(parserRule,parserContext);

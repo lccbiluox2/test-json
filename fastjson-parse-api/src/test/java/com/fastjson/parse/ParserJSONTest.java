@@ -175,68 +175,48 @@ public class ParserJSONTest {
                 "    \"code\": \"0\",\n" +
                 "    \"data\": [\n" +
                 "        {\n" +
-                "            \"resolves\": 1,\n" +
-                "            \"severity\": \"medium\",\n" +
-                "            \"iocType\": \"domain\",\n" +
-                "            \"apt\": null,\n" +
-                "            \"ip\": {\n" +
-                "                \"20150316\": [\n" +
-                "                    \"173.230.158.166\",\n" +
-                "                    \"209.99.40.227\"\n" +
-                "                ],\n" +
-                "                \"20150718\": [\n" +
-                "                    \"173.230.158.166\"\n" +
-                "                ],\n" +
-                "                \"20160608\": [\n" +
-                "                    \"195.22.26.232\"\n" +
-                "                ],\n" +
-                "                \"20160929\": [\n" +
-                "                    \"89.185.44.100\"\n" +
-                "                ],\n" +
-                "                \"20190816\": [\n" +
-                "                    \"72.26.218.76\"\n" +
-                "                ],\n" +
-                "                \"20191207\": [\n" +
-                "                    \"72.26.218.70\"\n" +
-                "                ]\n" +
+                "            \"data\": \"45.155.205.211\",\n" +
+                "            \"dataType\": \"ip\",\n" +
+                "            \"now\": [],\n" +
+                "            \"machinename\": \"40.64.5.59, 218.28.220.234\",\n" +
+                "            \"location\": {\n" +
+                "                \"country\": \"俄罗斯\",\n" +
+                "                \"province\": \"莫斯科\",\n" +
+                "                \"lng\": 37.611856,\n" +
+                "                \"city\": \"莫斯科\",\n" +
+                "                \"countryCode\": \"RU\",\n" +
+                "                \"lat\": 55.755847\n" +
                 "            },\n" +
-                "            \"relatedSample\": [\n" +
-                "                \"e97db0cfeaa2ea5faf8f997a902432da\"\n" +
+                "            \"id\": \"c97127e2d74f4486b053d1d11d7a7c86\",\n" +
+                "            \"asn\": \"SERVERIUS-AS, NL\",\n" +
+                "            \"createDate\": null\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"data\": \"192.186.1.2\",\n" +
+                "            \"dataType\": \"ip\",\n" +
+                "            \"now\": [\n" +
+                "                {\n" +
+                "                    \"severity\": \"medium\",\n" +
+                "                    \"data\": \"192.186.1.2\",\n" +
+                "                    \"confidence\": 83,\n" +
+                "                    \"typeName\": \"垃圾邮件\",\n" +
+                "                    \"sourceName\": \"微步-全网IP信誉\",\n" +
+                "                    \"typeMalicious\": \"1\",\n" +
+                "                    \"type\": \"Spam\"\n" +
+                "                }\n" +
                 "            ],\n" +
-                "            \"confidence\": 85,\n" +
-                "            \"intelType\": \"C2\",\n" +
-                "            \"industry\": [],\n" +
-                "            \"uri\": null,\n" +
-                "            \"ssl\": [],\n" +
-                "            \"platform\": [\n" +
-                "                \"all\"\n" +
-                "            ],\n" +
-                "            \"tags\": [\n" +
-                "                \"Ramnit\"\n" +
-                "            ],\n" +
-                "            \"protocol\": null,\n" +
-                "            \"application\": null,\n" +
-                "            \"port\": 80,\n" +
-                "            \"createTime\": null,\n" +
-                "            \"whois\": {\n" +
-                "                \"expiryDate\": \"2021-06-07T13:50:07.0Z\",\n" +
-                "                \"updateDate\": \"2020-05-23T14:20:44.0Z\",\n" +
-                "                \"techStreet\": \"PO Box 701\",\n" +
-                "                \"techCity\": \"San Mateo\",\n" +
-                "                \"nameServer\": \"ns1.fget-career.com|ns2.fget-career.com|ns3.fget-career.com|ns4.fget-career.com|ns5.fget-career.com|ns6.fget-career.com|ns7.fget-career.com|ns8.fget-career.com\",\n" +
-                "                \"registrarName\": \"DYNADOT LLC\",\n" +
-                "                \"registrantEmail\": \"fget-career.com@superprivacyservice.com\",\n" +
-                "                \"techCountry\": \"US\",\n" +
-                "                \"ioc\": \"fget-career.com\",\n" +
-                "                \"registrantName\": \"Super Privacy Service LTD c/o Dynadot\",\n" +
-                "                \"createDate\": \"2016-06-07T13:50:07.0Z\"\n" +
+                "            \"machinename\": \"40.64.5.59, 218.28.220.234\",\n" +
+                "            \"location\": {\n" +
+                "                \"country\": \"美国\",\n" +
+                "                \"province\": \"\",\n" +
+                "                \"lng\": -101.407912,\n" +
+                "                \"city\": \"\",\n" +
+                "                \"countryCode\": \"US\",\n" +
+                "                \"lat\": 39.765054\n" +
                 "            },\n" +
-                "            \"tlp\": 3,\n" +
-                "            \"levelN\": null,\n" +
-                "            \"sourceName\": \"微步-失陷指标\",\n" +
-                "            \"id\": \"0a308c7411b612f596246502\",\n" +
-                "            \"ioc\": \"fget-career.com\",\n" +
-                "            \"timestamp\": 1569413113\n" +
+                "            \"id\": \"30cbab3af1d640abb5a585103e939780\",\n" +
+                "            \"asn\": \"FEDERAL-ONLINE-GROUP-LLC - FEDERAL ONLINE GROUP LLC, US\",\n" +
+                "            \"createDate\": null\n" +
                 "        }\n" +
                 "    ],\n" +
                 "    \"message\": \"success\"\n" +
@@ -271,7 +251,8 @@ public class ParserJSONTest {
         ParserRule shareData = new ParserRule(5,"formattingDataByType","{\"type\":\"getData\",\"level\":1,\"fields\":[{\"field\":\"data\",\"type\":\"JSONObject\"}],\"condition\":\"data.length > 0\",\"isThrowEx\":false,\"exMessage\":\"xxx\"}");
 
 
-        rule.add(getData);
+        ParserRule getDataByField = new ParserRule(2,"getDataByField","{\"type\":\"getDataByField\",\"level\":1,\"fields\":[{\"field\":\"data\",\"type\":\"JSONArray\"}],\"isThrowEx\":false,\"exMessage\":\"xxx\"}");
+        rule.add(getDataByField);
         rule.add(check);
 
         rule.add(keySink);
