@@ -1,10 +1,10 @@
-package com.fastjson.parse;
+package com.fastjson.conversion.factory;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.fastjson.parse.rule.DataField;
-import com.fastjson.parse.rule.ParserRule;
-import com.fastjson.parse.rule.getdata.GetDataByFieldRule;
+import com.fastjson.conversion.rule.DataField;
+import com.fastjson.conversion.rule.ParserRule;
+import com.fastjson.conversion.rule.getdata.GetDataByFieldRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package com.fastjson.parse.rule.format;
+package com.fastjson.conversion.rule.format;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
-package com.fastjson.parse.rule.getdata;
+package com.fastjson.conversion.rule.getdata;
 
-import com.fastjson.parse.rule.DataField;
+import com.fastjson.conversion.rule.DataField;
 import lombok.Data;
 
 import java.util.List;

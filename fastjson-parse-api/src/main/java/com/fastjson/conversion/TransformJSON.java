@@ -1,13 +1,18 @@
-package com.fastjson.parse;
+package com.fastjson.conversion;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fastjson.parse.rule.DataField;
-import com.fastjson.parse.rule.ParserRule;
-import com.fastjson.parse.rule.check.CheckDataRule;
-import com.fastjson.parse.strategy.ParserConfig;
+import com.fastjson.conversion.factory.FormatDataFactory;
+import com.fastjson.conversion.factory.GetDataFactory;
+import com.fastjson.conversion.factory.ParserContext;
+import com.fastjson.conversion.factory.RemoveFieldFactory;
+import com.fastjson.conversion.factory.SinkDataFactory;
+import com.fastjson.conversion.rule.DataField;
+import com.fastjson.conversion.rule.ParserRule;
+import com.fastjson.conversion.rule.check.CheckDataRule;
+import com.fastjson.conversion.strategy.ParserConfig;
 import com.googlecode.aviator.AviatorEvaluator;
 
 import java.util.HashMap;
@@ -21,12 +26,16 @@ import java.util.Set;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 转换json 将一种json转成另外一种json
  */
-public class ParserJSON {
+public class TransformJSON {
 
     ObjectMapper mapper = new ObjectMapper();
     private GetDataFactory getDataFactory = new GetDataFactory();
     FormatDataFactory formatData = new FormatDataFactory();
+    RemoveFieldFactory removeFieldFactory = new RemoveFieldFactory();
+    private SinkDataFactory sinkDataFactory = new SinkDataFactory();
 
     public String parse(String json, ParserConfig parserConfig, List<ParserRule> rule) throws JsonProcessingException {
         if (rule == null || rule.isEmpty()) {
@@ -71,6 +80,22 @@ public class ParserJSON {
                 printDetail(parserContext);
             }
 
+            if (name.equals("removeField")) {
+                removeFieldFactory.processRemoveField(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
+            if (name.equals("ObjectSinkToArrayObject")) {
+                sinkDataFactory.processObjectSinkToArrayObject(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
+            if (name.equals("objectKeySinkToArrayObject")) {
+                sinkDataFactory.processObjectKeySinkToArrayObject(parserRule,parserContext);
+                printDetail(parserContext);
+            }
+
+
 
 
         }
@@ -93,6 +118,9 @@ public class ParserJSON {
     }
 
     private void printDetail(ParserContext parserContext) throws JsonProcessingException {
+        System.out.println("=====================");
+        System.out.println("=====================");
+        System.out.println("=====================");
         if(parserContext.isTypeArray()){
             //格式化/美化/优雅的输出
             System.out.println(mapper.writerWithDefaultPrettyPrinter()
@@ -103,6 +131,9 @@ public class ParserJSON {
                     .writeValueAsString(parserContext.getObject()));
         }
 
+        System.out.println("=====================");
+        System.out.println("=====================");
+        System.out.println("=====================");
     }
 
 

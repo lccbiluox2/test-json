@@ -1,6 +1,5 @@
-package com.fastjson.parse.rule.format;
+package com.fastjson.conversion.rule.format;
 
-import com.fastjson.parse.rule.DataField;
 import lombok.Data;
 
 import java.util.List;

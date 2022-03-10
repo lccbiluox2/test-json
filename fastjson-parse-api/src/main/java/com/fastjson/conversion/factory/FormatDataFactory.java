@@ -1,11 +1,11 @@
-package com.fastjson.parse;
+package com.fastjson.conversion.factory;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fastjson.parse.rule.ParserRule;
-import com.fastjson.parse.rule.format.DataFormatField;
-import com.fastjson.parse.rule.format.FormatDataRule;
+import com.fastjson.conversion.rule.ParserRule;
+import com.fastjson.conversion.rule.format.DataFormatField;
+import com.fastjson.conversion.rule.format.FormatDataRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package com.fastjson.parse.utils;
+package com.fastjson.conversion.utils;
 
 /**
  * @author: chuanchuan.lcc

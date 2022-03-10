@@ -1,4 +1,4 @@
-package com.fastjson.parse.strategy;
+package com.fastjson.conversion.strategy;
 
 import lombok.Data;
 

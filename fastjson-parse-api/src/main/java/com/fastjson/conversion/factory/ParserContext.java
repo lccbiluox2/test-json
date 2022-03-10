@@ -1,4 +1,4 @@
-package com.fastjson.parse;
+package com.fastjson.conversion.factory;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
