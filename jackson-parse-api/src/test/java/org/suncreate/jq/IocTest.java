@@ -19,6 +19,7 @@ import java.io.*;
  */
 public class IocTest {
     private ObjectMapper MAPPER = new ObjectMapper();
+
     @Test
     public void parseWb() throws IOException {
         String s = FileUtil.readText("src/main/resources/weiBu.jq", s1 -> !s1.startsWith("//"));
