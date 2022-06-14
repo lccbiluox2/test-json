@@ -29,9 +29,7 @@ import java.util.Set;
  * @date: 2022-03-08 13:33
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
- * @description:
- *
- * 转换json 将一种json转成另外一种json
+ * @description: 转换json 将一种json转成另外一种json
  */
 public class TransformJSON {
 
@@ -64,62 +62,61 @@ public class TransformJSON {
         for (ParserRule parserRule : rule) {
             int step = parserRule.getStep();
             String name = parserRule.getName();
+            String rule1 = parserRule.getRule();
+            System.out.println("执行的规则：" + rule1);
             if (name.equals("check")) {
                 processCheckDataRule(data, parserRule);
             }
             if (name.equals("getData")) {
-                getDataFactory.processGetDataRuleAiAnxin(parserRule,parserContext);
+                getDataFactory.processGetDataRuleAiAnxin(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
             if (name.equals("getDataByField")) {
-                getDataFactory.processGetDataByFieldRule(parserRule,parserContext);
+                getDataFactory.processGetDataByFieldRule(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
 
             if (name.equals("keyObjectSinkToArray")) {
-                processKeyObjectSinkToArray(parserRule,parserContext);
+                processKeyObjectSinkToArray(parserRule, parserContext);
             }
             if (name.equals("formattingDataByType")) {
-                formatData.processFormattingDataByType(parserRule,parserContext);
+                formatData.processFormattingDataByType(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
             if (name.equals("removeField")) {
-                removeFieldFactory.processRemoveField(parserRule,parserContext);
+                removeFieldFactory.processRemoveField(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
             if (name.equals("ObjectSinkToArrayObject")) {
-                sinkDataFactory.processObjectSinkToArrayObject(parserRule,parserContext);
+                sinkDataFactory.processObjectSinkToArrayObject(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
             if (name.equals("objectKeySinkToArrayObject")) {
-                sinkDataFactory.processObjectKeySinkToArrayObject(parserRule,parserContext);
+                sinkDataFactory.processObjectKeySinkToArrayObject(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
             if (name.equals("MappingDataRule")) {
-                mappingDataFactory.processMappingDataRule(parserRule,parserContext);
+                mappingDataFactory.processMappingDataRule(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
 
             if (name.equals("MappingRangeRule")) {
-                mappingDataFactory.processMappingRangeRule(parserRule,parserContext);
+                mappingDataFactory.processMappingRangeRule(parserRule, parserContext);
                 printDetail(parserContext);
             }
 
 
             if (name.equals("RenameFieldRule")) {
-                renameFieldsFactory.processRenameFieldRule(parserRule,parserContext);
+                renameFieldsFactory.processRenameFieldRule(parserRule, parserContext);
                 printDetail(parserContext);
             }
-
-
-
 
 
         }
@@ -131,9 +128,9 @@ public class TransformJSON {
         JSONObject object = parserContext.getObject();
         Set<String> strings = object.keySet();
         JSONArray arrayResult = new JSONArray();
-        for (String item:strings){
+        for (String item : strings) {
             JSONObject item1 = object.getJSONObject(item);
-            item1.put("_id",item);
+            item1.put("_id", item);
             arrayResult.add(item1);
         }
         parserContext.setTypeArray(true);
@@ -145,11 +142,11 @@ public class TransformJSON {
         System.out.println("=====================");
         System.out.println("=====================");
         System.out.println("=====================");
-        if(parserContext.isTypeArray()){
+        if (parserContext.isTypeArray()) {
             //格式化/美化/优雅的输出
             System.out.println(mapper.writerWithDefaultPrettyPrinter()
                     .writeValueAsString(parserContext.getArray()));
-        }else {
+        } else {
             //格式化/美化/优雅的输出
             System.out.println(mapper.writerWithDefaultPrettyPrinter()
                     .writeValueAsString(parserContext.getObject()));
@@ -159,7 +156,6 @@ public class TransformJSON {
         System.out.println("=====================");
         System.out.println("=====================");
     }
-
 
 
     private void processCheckDataRule(JSONObject data, ParserRule parserRule) {
